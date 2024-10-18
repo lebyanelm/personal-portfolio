@@ -1,9 +1,40 @@
 <div class="page-container">
+  <app-header></app-header>
   <app-hero class="w-full block fixed top-0 left-0 z-0"></app-hero>
   <section class="hero-filler w-full h-[100vh] bg-red"></section>
-  <section class="h-[100vh] w-full absolute z-2" id="main-content">
-    <div class="hero-text text-[280px] font-serif font-extrabold text-center">
-      Libby:
+  <section
+    class="h-[100vh] w-full absolute z-1 grid place-items-center"
+    id="main-content"
+  >
+    <div
+      class="hero-text text-[148px] font-serif font-extrabold text-center leading-none"
+    >
+      <span><u>A self-taught</u></span
+      ><br />
+      <span>full-stack</span><br />
+      <span>developer.</span><br />
     </div>
+
+    <a
+      class="w-[fit-content] resume-download button self-center mt-20"
+      href="/assets/Resume.pdf"
+      target="_blank"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="ionicon"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M256 464c114.87 0 208-93.13 208-208S370.87 48 256 48 48 141.13 48 256s93.13 208 208 208zm-91.36-212.65a16 16 0 0122.63-.09L240 303.58V170a16 16 0 0132 0v133.58l52.73-52.32A16 16 0 11347.27 274l-80 79.39a16 16 0 01-22.54 0l-80-79.39a16 16 0 01-.09-22.65z"
+        />
+      </svg>
+      <u>Download resume</u>
+    </a>
+    <span class="self-center mt-2 font-bold"
+      ><i>*ATS friendly document.</i></span
+    >
+
+    <section class="h-[100vh] w-full">Yes</section>
   </section>
 </div>

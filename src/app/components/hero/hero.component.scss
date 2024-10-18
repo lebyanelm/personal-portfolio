@@ -1,0 +1,60 @@
+// Plaques
+.plaques-container {
+  z-index: -2;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.plaques-container .plaque {
+  height: 220px;
+  width: 180px;
+  position: absolute;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.4;
+
+  &:nth-child(1) {
+    background-image: url("https://jopecuro.com/assets/img/studio.jpg");
+    left: 10%;
+    top: 20%;
+  }
+
+  &:nth-child(2) {
+    background-image: url("https://jopecuro.com/assets/img/porto.jpg");
+    left: 25%;
+    top: 50%;
+  }
+
+  &:nth-child(3) {
+    background-image: url("https://jopecuro.com/assets/img/vespa.jpg");
+    left: 40%;
+    top: 20%;
+  }
+
+  &:nth-child(4) {
+    background-image: url("https://jopecuro.com/assets/img/organge.jpg");
+    left: 55%;
+    top: 50%;
+  }
+
+  &:nth-child(5) {
+    background-image: url("https://jopecuro.com/assets/img/bookman.jpg");
+    left: 70%;
+    top: 20%;
+  }
+}
+
+.scroll-animation {
+  transform: translateX(-50%);
+  width: 136px;
+  filter: grayscale(1);
+  border: 2px solid black;
+  border-radius: 100px;
+}
