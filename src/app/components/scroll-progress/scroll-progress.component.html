@@ -1,0 +1,49 @@
+<div
+  class="scroll-progress-container h-[100vh] fixed top-0 left-0 p-5 pt-8 flex flex-col justify-between content-center items-center"
+>
+  <div
+    class="scroll-current-section text-[larger] uppercase font-extrabold w-16"
+  >
+    <!-- <span #CurrentSection>{{ this.currentSection }}</span> -->
+  </div>
+  <div class="scroll-progress">
+    <div class="scroll-progress-full">
+      <div
+        class="scroll-current-progress"
+        [style.height]="this.currentProgress + '%'"
+      ></div>
+      <div class="scroll-sections">
+        <div
+          class="section"
+          *ngFor="let section of this.scrollProgressService.sections.getValue()"
+          [style]="'height: ' + section.height + '%'"
+          (click)="this.scrollTo(section.position)"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-to-top text-center" (click)="this.scrollTo(0)">
+    <div class="scroll-icon">
+      <svg
+        width="23"
+        height="62"
+        viewBox="0 0 23 62"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.6796 11.8398L11.8398 3L3.00001 11.8398"
+          stroke-width="3"
+          stroke-miterlimit="10"
+          stroke-linecap="square"
+        />
+        <path
+          d="M11.8397 5.20996L11.8397 60.4586"
+          stroke-width="3"
+          stroke-miterlimit="10"
+          stroke-linecap="square"
+        />
+      </svg>
+    </div>
+  </div>
+</div>

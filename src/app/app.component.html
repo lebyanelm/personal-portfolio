@@ -1,40 +1,184 @@
 <div class="page-container">
   <app-header></app-header>
   <app-hero class="w-full block fixed top-0 left-0 z-0"></app-hero>
-  <section class="hero-filler w-full h-[100vh] bg-red"></section>
+
+  <!-- Scroll progress -->
+  <app-scroll-progress></app-scroll-progress>
+
   <section
-    class="h-[100vh] w-full absolute z-1 grid place-items-center"
+    class="hero-filler w-full h-[100vh] bg-red"
+    data-section-name="Welcome"
+  ></section>
+  <section
+    class="w-full h-[180vh] grid place-items-center"
+    data-section-name="About"
     id="main-content"
   >
-    <div
-      class="hero-text text-[148px] font-serif font-extrabold text-center leading-none"
-    >
-      <span><u>A self-taught</u></span
+    <div class="leading-header">
+      <span>A <u>digital creative</u></span
       ><br />
-      <span>full-stack</span><br />
-      <span>developer.</span><br />
+      <span>& web dev.</span><br />
     </div>
+  </section>
 
-    <a
-      class="w-[fit-content] resume-download button self-center mt-20"
-      href="/assets/Resume.pdf"
-      target="_blank"
+  <section
+    class="h-[400vh] w-[100vw] bg-white relative"
+    data-section-name="Inspiration"
+    #FliptextStory
+  >
+    <section
+      class="h-[100vh] w-full bg-black flex items-center justify-center"
+      id="fliptext-story"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="ionicon"
-        viewBox="0 0 512 512"
-      >
-        <path
-          d="M256 464c114.87 0 208-93.13 208-208S370.87 48 256 48 48 141.13 48 256s93.13 208 208 208zm-91.36-212.65a16 16 0 0122.63-.09L240 303.58V170a16 16 0 0132 0v133.58l52.73-52.32A16 16 0 11347.27 274l-80 79.39a16 16 0 01-22.54 0l-80-79.39a16 16 0 01-.09-22.65z"
-        />
-      </svg>
-      <u>Download resume</u>
-    </a>
-    <span class="self-center mt-2 font-bold"
-      ><i>*ATS friendly document.</i></span
-    >
+      <div
+        class="flex-[0.6] h-[100vh] bg-gray-600"
+        style="
+          background-image: url('/assets/li_1.png');
+          background-size: cover;
+        "
+      ></div>
+      <div class="flex-[0.5] text-story-container">
+        <div class="fliptext fliptext-1">
+          <div class="fliptext-header">
+            <span>Humble Beginnings</span>
+          </div>
+          <div class="text-base text-justify fliptext-story">
+            <span
+              >My story began modestly, with a second-hand laptop and a fierce
+              determination to build something meaningful. In those early days,
+              I was navigating the basics of HTML and CSS, struggling at first,
+              but feeling a spark of excitement each time I grasped a new
+              concept. I believed the digital world held endless potential to
+              create, inspire, and connect people—an idea that fueled my
+              self-study every step of the way.</span
+            >
+            <br />
+            <br />
+            <span
+              ><i><b>&mdash; Early 2015.</b></i></span
+            >
+          </div>
+        </div>
 
-    <section class="h-[100vh] w-full">Yes</section>
+        <div class="fliptext fliptext-2">
+          <div class="fliptext-header">
+            <span>Attention to Quality</span>
+          </div>
+          <div class="text-base text-justify fliptext-story">
+            <span
+              >As my skills grew, I encountered essential principles of web
+              design that changed my approach. I came to understand the
+              importance of simplicity in design, realizing that clean,
+              intuitive interfaces are what keep users engaged. Responsive
+              design became a priority, as I learned that every visitor deserves
+              an optimized experience, no matter what device they're on. This
+              user-centered thinking became the foundation of my philosophy,
+              driving me to prioritize accessibility, readability, and
+              functionality in every project.</span
+            >
+            <br />
+            <br />
+            <span
+              ><i><b>&mdash; Late 2016.</b></i></span
+            >
+          </div>
+        </div>
+
+        <div class="fliptext fliptext-3">
+          <div class="fliptext-header">
+            <span>Resilience and Patience</span>
+          </div>
+          <div class="text-base text-justify fliptext-story">
+            <span
+              >Self-teaching wasn't easy, and I often faced technical challenges
+              that truly tested my patience. But each struggle became a chance
+              to grow. I developed problem-solving skills and
+              resilience&mdash;the core traits of any good web developer. I'd
+              spend countless nights debugging, searching forums, and watching
+              tutorials, committed to mastering this craft.</span
+            >
+            <br />
+            <br />
+            <span
+              ><i><b>&mdash; Sadly, bugs don't end.</b></i></span
+            >
+          </div>
+        </div>
+
+        <div class="fliptext fliptext-4">
+          <div class="fliptext-header">
+            <span>Skills</span>
+          </div>
+          <div class="text-base text-justify fliptext-story tabulated">
+            <table>
+              <thead>
+                <tr>
+                  <td>Skills</td>
+                  <td>Tools</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Frontend</td>
+                  <td>
+                    <img src="/assets/HTML.svg" alt="HTML" />
+                    <img src="/assets/CSS.svg" alt="CSS" />
+                    <img src="/assets/JavaScript.svg" alt="JavaScript" />
+                    <img src="/assets/Angular-Dark.svg" alt="Angular" />
+                    <img src="/assets/React-Dark.svg" alt="React" />
+                    <img src="/assets/VueJS-Dark.svg" alt="VueJS" />
+                    <img src="/assets/TypeScript.svg" alt="TypeScript" />
+                    <img src="/assets/Babel.svg" alt="Babel" />
+                    <img src="/assets/D3-Dark.svg" alt="Babel" />
+                    <img src="/assets/TailwindCSS-Dark.svg" alt="Babel" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Backend</td>
+                  <td>
+                    <img src="/assets/NodeJS-Dark.svg" alt="NodeJS" />
+                    <img src="/assets/DENO-Dark.svg" alt="NodeJS" />
+                    <img src="/assets/ExpressJS-Dark.svg" alt="ExpressJS" />
+                    <img src="/assets/Python-Dark.svg" alt="Python" />
+                    <img src="/assets/Flask-Dark.svg" alt="Flask" />
+                    <img src="/assets/Django.svg" alt="Cloudflare" />
+                    <img src="/assets/MongoDB.svg" alt="Cloudflare" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>DevOps</td>
+                  <td>
+                    <img src="/assets/Bash-Dark.svg" alt="Bash" />
+                    <img src="/assets/Cloudflare-Dark.svg" alt="Cloudflare" />
+                    <img src="/assets/Heroku.svg" alt="Heroku" />
+                    <img src="/assets/Git.svg" alt="Git" />
+                    <img src="/assets/AWS-Dark.svg" alt="AWS" />
+                    <img src="/assets/Linux-Dark.svg" alt="Linux" />
+                    <img src="/assets/Docker.svg" alt="Docker" />
+                    <img src="/assets/Selenium.svg" alt="Selenium" />
+                    <img src="/assets/Kubernetes.svg" alt="Kubernetes" />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Design</td>
+                  <td>
+                    <img src="/assets/Figma-Dark.svg" alt="Figma" />
+                    <img src="/assets/Illustrator.svg" alt="Illustrator" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <br />
+            <a href="/assets/li-resume.pdf" target="_blank"
+              >Download full resume</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
   </section>
 </div>

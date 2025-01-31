@@ -1,0 +1,62 @@
+<head>
+  <style>
+    .text-container {
+      position: relative;
+      height: 100px; /* Adjust based on your design */
+    }
+
+    p {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+
+    .slide-out-text {
+      transform: translateY(0);
+      opacity: 1;
+      transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    .fade-in-text {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .text-container.active .slide-out-text {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+
+    .text-container.active .fade-in-text {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text-container">
+    <p class="slide-out-text">This text slides out</p>
+    <p class="fade-in-text">This text fades in</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const textContainer = document.querySelector(".text-container");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            textContainer.classList.add("active");
+          } else {
+            textContainer.classList.remove("active");
+          }
+        });
+      });
+
+      observer.observe(textContainer);
+    });
+  </script>
+</body>

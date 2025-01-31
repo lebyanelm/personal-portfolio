@@ -1,0 +1,95 @@
+.scroll-progress-container {
+  z-index: 99;
+  mix-blend-mode: difference;
+}
+
+.scroll-progress {
+  --scroll-progress-color: var(--white-color);
+  height: 400px;
+  background: transparentize(white, 0.8);
+
+  &,
+  & .scroll-current-progress {
+    border-radius: 10px;
+  }
+
+  .scroll-progress-full {
+    height: 100%;
+    width: 10px;
+    position: relative;
+
+    .scroll-current-progress {
+      width: 100%;
+      background: var(--scroll-progress-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .scroll-sections {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      .section {
+        width: 100%;
+        outline: 5px solid var(--dark-color);
+        border-radius: 0px;
+        margin-bottom: 5px;
+        transition: all 150ms ease;
+
+        &:hover {
+          background: var(--theme-color);
+          width: 150%;
+        }
+      }
+
+      .section:first-child {
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
+      }
+
+      .section:last-child {
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+    }
+  }
+}
+
+.scroll-to-top {
+  opacity: 1;
+
+  svg,
+  .scroll-icon {
+    transition: background 0.2s ease-in-out, stroke 0.2s ease-in-out;
+  }
+
+  &[data-show-button="false"] {
+    opacity: 0;
+  }
+
+  .scroll-icon {
+    --size: 100px;
+    display: grid;
+    place-items: center;
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+    margin-bottom: 10px;
+    border: var(--border);
+    background: var(--white-color);
+  }
+
+  svg {
+    height: 60px;
+    margin-bottom: 20px;
+    transform: translateY(5px);
+    stroke: var(--dark-color);
+  }
+}

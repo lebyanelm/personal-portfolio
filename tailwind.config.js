@@ -9,8 +9,9 @@ module.exports = {
         text: "#000000",
       },
       fontFamily: {
-        sans: ["Space Grotesk", "Arial", "sans-serif"],
+        sans: ["Signika Negative", "Arial", "sans-serif"],
         serif: ["Libre Baskerville", "serif"],
+        icon: ["Long Cang"],
       },
     },
   },

@@ -1,0 +1,68 @@
+@import "../tailwind.css";
+
+.fliptext {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 80px;
+  transition: opacity 300ms ease-in-out;
+
+  .fliptext-header {
+    @apply text-[48px] font-serif font-extrabold mb-10;
+    line-height: 1;
+  }
+
+  .fliptext-story {
+    margin-left: 20%;
+  }
+
+  .fliptext-story.tabulated {
+    margin-left: 0;
+  }
+}
+
+table {
+  width: 100%;
+  border-radius: 5px;
+
+  thead tr {
+    display: none;
+    background: white;
+    color: black;
+    td {
+      font-weight: 900 !important;
+      border-bottom-width: 8px;
+    }
+  }
+
+  tr td {
+    padding: 5px 15px;
+    text-align: left;
+    place-items: center;
+    border-bottom: 1px solid transparentize(white, 0);
+
+    img {
+      display: inline-block;
+      height: 50px;
+      margin: 5px;
+    }
+
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+a {
+  display: inline-block;
+  text-decoration: underline;
+  color: orangered;
+  text-underline-offset: 5px;
+  cursor: pointer !important;
+  font-weight: bolder;
+
+  &:hover {
+    text-underline-offset: 8px;
+  }
+}

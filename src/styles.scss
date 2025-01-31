@@ -14,27 +14,51 @@ body::after {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 10000;
   pointer-events: none;
+  mix-blend-mode: difference;
 }
 
 body,
 html {
   overflow-x: hidden !important;
+  background: black;
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 * {
-  // Variables
+  @apply font-medium;
+
   --theme-color: orangered;
   --dark-color: black;
   --white-color: white;
-  --border: 3px solid var(--dark-color);
+  --border: 3px solid black;
+
+  // text-transform: lowercase;
 
   animation-name: flying_cursor;
-  animation-duration: 0.2s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-play-state: running;
+}
+
+// LINKS
+a {
+  display: block;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+
+  &:hover {
+    color: orangered;
+    text-underline-offset: 10px;
+  }
 }
 
 // BUTTON
@@ -68,6 +92,26 @@ html {
     opacity: 1;
     scale: 1.05;
   }
+}
+
+// Custom scroll markers
+.scroll-marker {
+  display: block;
+  height: 10px;
+  width: 100%;
+  border-top: 1px dashed var(--theme-color);
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+
+  span {
+    background: var(--theme-color);
+  }
+}
+
+// HEADERS
+.leading-header {
+  @apply text-[60px] sm:text-[100px] lg:text-[280px] md:text-[180px] font-serif text-center leading-none;
 }
 
 /***** KEYFRAMES ******/

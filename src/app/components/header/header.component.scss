@@ -1,0 +1,68 @@
+.header-container {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+}
+
+.menu-button {
+  --size: 70px;
+  border: 1px solid white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  height: var(--size);
+  width: var(--size);
+  background: var(--dark-color);
+
+  span {
+    display: block;
+    height: 3px;
+    width: 45%;
+    background: var(--white-color);
+    transition: background 300ms ease;
+  }
+}
+
+.logo-space {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-blend-mode: screen;
+
+  svg {
+    --color: var(--white-color);
+    --color-dark: var(--black-color);
+    height: 80px;
+
+    path {
+      &.stroke {
+        stroke: var(--color);
+      }
+
+      &.fill {
+        fill: var(--color);
+      }
+
+      &.dark-fill {
+        fill: none;
+      }
+
+      &.i-dot {
+        animation-name: bounce_dot;
+        animation-duration: 0.8s;
+        animation-direction: alternate-reverse;
+      }
+    }
+  }
+}
+
+@keyframes bounce_dot {
+  from {
+    margin-top: translateY(0px);
+  }
+  to {
+    transform: translateY(9px);
+  }
+}

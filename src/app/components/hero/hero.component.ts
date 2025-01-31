@@ -16,8 +16,8 @@ export class HeroComponent implements AfterViewInit {
     gsap.defaults({ ease: 'ease.inOut' });
 
     // Blur fading effect
-    gsap.to('.hero-container', {
-      y: 100,
+    gsap.to('.hero-text-main', {
+      y: -40,
       filter: 'blur(20px)',
       scrollTrigger: {
         trigger: '#main-content',
@@ -29,8 +29,7 @@ export class HeroComponent implements AfterViewInit {
 
     // Remove the scroll indicator
     gsap.to('.scroll-animation', {
-      y: 100,
-      opacity: 0,
+      y: 200,
       scrollTrigger: {
         trigger: '#main-content',
         start: 'top bottom',
@@ -39,9 +38,32 @@ export class HeroComponent implements AfterViewInit {
       },
     });
 
+    // Scroll back top button
+    gsap.fromTo(
+      '.scroll-to-top',
+      {
+        y: 1000,
+        scrollTrigger: {
+          trigger: '#main-content',
+          start: 'top bottom',
+          end: 'top center',
+          scrub: true,
+        },
+      },
+      {
+        y: -10,
+        scrollTrigger: {
+          trigger: '#main-content',
+          start: 'top bottom',
+          end: 'top center',
+          scrub: true,
+        },
+      }
+    );
+
     // Animate the plaques also
     gsap.to('.plaque', {
-      y: 100,
+      y: -50,
       opacity: 0,
       scrollTrigger: {
         trigger: '#main-content',
@@ -50,5 +72,10 @@ export class HeroComponent implements AfterViewInit {
         scrub: true,
       },
     });
+  }
+
+  scrollToMainContent() {
+    const mainContent = document.getElementById('main-content');
+    mainContent?.scrollIntoView({ behavior: 'smooth' });
   }
 }
