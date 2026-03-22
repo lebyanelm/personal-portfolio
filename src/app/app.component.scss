@@ -9,7 +9,7 @@
   transition: opacity 300ms ease-in-out;
 
   .fliptext-header {
-    @apply text-[48px] font-serif font-extrabold mb-10;
+    @apply text-[48px] font-extrabold mb-10;
     line-height: 1;
   }
 
@@ -64,5 +64,75 @@ a {
 
   &:hover {
     text-underline-offset: 8px;
+  }
+}
+
+.project-showcase {
+
+  
+  &::after {
+    content: attr(data-name);
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    left: 8%;
+    top: 50px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    height: 50%;
+    width: 4px;
+    border-radius: 2px;
+    background: white;
+    position: absolute;
+    z-index: 100;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+
+.project-showcase-container {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: black;
+  position: relative;
+
+  .project-image-container,
+  .project-description {
+    display: block;
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    display: flex;
+    align-items: center; 
+  }
+
+  .project-image-container { left: 0; align-content: center;  }
+  .project-description { right: -100px; padding: 0 20px; }
+
+  .project-visual {
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .description-title {
+    font-size: 24pt;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    max-width: 65%;
+    text-align: justify;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 24px;
   }
 }

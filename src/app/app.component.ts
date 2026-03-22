@@ -17,7 +17,27 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('FliptextStory') fliptextStory!: ElementRef<HTMLDivElement>;
 
   title = 'personal-portfolio';
-  constructor(public scrollProgressService: ScrollProgressService) {}
+  constructor(public scrollProgressService: ScrollProgressService) {
+    document.onscroll = (event) => {
+      this.checkShowSectionNames();
+    }
+  }
+
+  checkShowSectionNames() {
+    const bodyRect = document.body.getClientRects()[0],
+        sections = document.querySelectorAll(".section");
+      
+      if (Math.abs(bodyRect.top) < 840) {
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].classList.add("show-names");
+          console.log("set")
+        }
+      } else {
+        for (let i = 0; i < sections.length; i++) {
+          sections[i].classList.remove("show-names");
+        }
+      }
+  }
 
   ngAfterViewInit(): void {
     this.scrollProgressService.registerScrollMarkers(
@@ -51,67 +71,6 @@ export class AppComponent implements AfterViewInit {
       opacity: 1,
     });
 
-    timeline.to('.fliptext-1', {
-      scrollTrigger: {
-        trigger: '.flip-marker-2',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 0,
-    });
-
-    // Second storyline
-    timeline.to('.fliptext-2', {
-      scrollTrigger: {
-        trigger: '.flip-marker-2',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 1,
-    });
-
-    timeline.to('.fliptext-2', {
-      scrollTrigger: {
-        trigger: '.flip-marker-3',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 0,
-    });
-
-    // Third storyline
-    timeline.to('.fliptext-3', {
-      scrollTrigger: {
-        trigger: '.flip-marker-3',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 1,
-    });
-
-    timeline.to('.fliptext-3', {
-      scrollTrigger: {
-        trigger: '.flip-marker-4',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 0,
-    });
-
-    // Fourth storyline
-    timeline.to('.fliptext-4', {
-      scrollTrigger: {
-        trigger: '.flip-marker-4',
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-      },
-      opacity: 1,
-    });
+    setTimeout(this.checkShowSectionNames, 100);
   }
 }

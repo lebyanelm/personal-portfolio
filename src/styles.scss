@@ -109,6 +109,11 @@ a {
   }
 }
 
+.blurred {
+  filter: blur(50px);
+  transition: filter 50ms ease-in-out;
+}
+
 // HEADERS
 .leading-header {
   @apply text-[60px] sm:text-[100px] lg:text-[280px] md:text-[180px] font-serif text-center leading-none;

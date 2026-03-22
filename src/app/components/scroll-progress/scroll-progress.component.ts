@@ -76,6 +76,20 @@ export class ScrollProgressComponent implements AfterViewInit {
     });
   }
 
+  setPageBlur() {
+    const sections = document.getElementsByTagName("section")
+    for (let i = 0; i < sections.length; i++) {
+      sections[i].classList.add("blurred")
+    }
+  }
+
+  resetPageBlur() {
+    const sections = document.getElementsByTagName("section")
+    for (let i = 0; i < sections.length; i++) {
+      sections[i].classList.remove("blurred")
+    }
+  }
+  
   ngAfterViewInit(): void {
     this.mutationObserver = new MutationObserver(() => {
       const currentScrollHeight = document.documentElement.scrollHeight;

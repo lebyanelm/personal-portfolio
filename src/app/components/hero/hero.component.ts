@@ -27,6 +27,15 @@ export class HeroComponent implements AfterViewInit {
       },
     });
 
+    gsap.to('.section::after', {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: '#main-content',
+        start: 'top',
+        end: 'bottom'
+      },
+    });
+
     // Remove the scroll indicator
     gsap.to('.scroll-animation', {
       y: 200,

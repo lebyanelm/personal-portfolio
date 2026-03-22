@@ -1,12 +1,13 @@
 <div
   class="scroll-progress-container h-[100vh] fixed top-0 left-0 p-5 pt-8 flex flex-col justify-between content-center items-center"
+  (mouseover)="setPageBlur()" (mouseleave)="resetPageBlur()"
 >
   <div
     class="scroll-current-section text-[larger] uppercase font-extrabold w-16"
   >
     <!-- <span #CurrentSection>{{ this.currentSection }}</span> -->
   </div>
-  <div class="scroll-progress">
+  <div class="scroll-progress" >
     <div class="scroll-progress-full">
       <div
         class="scroll-current-progress"
@@ -16,6 +17,7 @@
         <div
           class="section"
           *ngFor="let section of this.scrollProgressService.sections.getValue()"
+          [attr.data-name]="section.name"
           [style]="'height: ' + section.height + '%'"
           (click)="this.scrollTo(section.position)"
         ></div>
